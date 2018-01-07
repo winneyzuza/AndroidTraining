@@ -31,7 +31,7 @@ public class MyGetRateFromAPI extends AsyncTask<String, Void, String>{
 
             Response response = okHttpClient.newCall(request).execute();
 
-            return response.body().toString();
+            return response.body().string();
 
 
         } catch (Exception e) {
