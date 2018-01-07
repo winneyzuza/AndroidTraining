@@ -1,7 +1,10 @@
 package winney.co.th.myexchange.utility;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
+
+import winney.co.th.myexchange.R;
 
 /**
  * Created by Dell on 1/7/2018.
@@ -19,8 +22,16 @@ public class MyAlert {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setCancelable(false);
-
-
+        builder.setIcon(R.drawable.ic_action_alert);
+        builder.setTitle(titleString);
+        builder.setMessage(messageString);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        builder.show();
 
     }
 }// Main Class
